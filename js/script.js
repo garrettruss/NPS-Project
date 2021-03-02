@@ -5,6 +5,7 @@ let parkData = {};
 
 // cached element references - selected DOM elements/wrapping in money
 let $fullName = $('#fullName');
+let $states = $('#states');
 let $designation = $('#designation');
 let $description = $('#description');
 let $directionsInfo = $('#directionsInfo');
@@ -42,6 +43,7 @@ function handleSubmit(evt) {
 
 function render() {
         $fullName.text(parkData.data[0].fullName);
+        $states.text(parkData.data[0].states);
         $designation.text(parkData.data[0].designation);
         $description.text(parkData.data[0].description);
         $directionsInfo.text(parkData.data[0].directionsInfo);
