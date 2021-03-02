@@ -1,16 +1,22 @@
 body {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     padding: 100px;
-    background-color: lightgray;
+    background-image: url(/imgs/NPS.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Shippori Mincho',
         serif;
 }
 
 .container {
     text-align: center;
-    background-color: turquoise;
+    background-color: lightgoldenrodyellow;
     color: black;
     border-radius: 30px;
     padding: 50px;
+    opacity: 0.8;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: left;
 }
