@@ -36,11 +36,11 @@ function handleSubmit(evt) {
 
 
 function render() {
-        $fullName.text(parkData.data.array[0].fullName);
-        //$designation.text(parkData.data[0].designation);
-        //$description.text(parkData.data[0].description);
-        //$directionsInfo.text(parkData.data[0].directionsInfo);
-        //$weatherInfo.text(parkData.data[0].weatherInfo);
+        $fullName.text(parkData.data[0].fullName);
+        $designation.text(parkData.data[0].designation);
+        $description.text(parkData.data[0].description);
+        $directionsInfo.text(parkData.data[0].directionsInfo);
+        $weatherInfo.text(parkData.data[0].weatherInfo);
        ;
     }
 
