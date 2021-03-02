@@ -1,5 +1,7 @@
+// IPO Pattern for program design - Input -> Process -> Output
+
 //State Variable
-let parkData = [];
+let parkData = {};
 
 // cached element references - selected DOM elements/wrapping in money
 let $fullName = $('#fullName');
@@ -7,6 +9,8 @@ let $designation = $('#designation');
 let $description = $('#description');
 let $directionsInfo = $('#directionsInfo');
 let $weatherInfo = $('#weatherInfo');
+let $moreInfo = $('#moreInfo');
+
 let $input = $('input[type="text"]');
 
 const API_Key = "WeQkOhGU8MvgNRWVjqmbD8SDqYb7JSlREdUSf5uS";
@@ -18,7 +22,7 @@ $('form').on("submit", handleSubmit);
 
 // functions 
 
-
+// Take input from user to search NPS API for results, render results for user or show error. 
 function handleSubmit(evt) {
     evt.preventDefault();
     const term = $input.val();
@@ -34,6 +38,7 @@ function handleSubmit(evt) {
     });
 }
 
+//Display results. Right now the first '0' array is selected tos show the APi is linked. Ideally want to display first 40 results in a list. 
 
 function render() {
         $fullName.text(parkData.data[0].fullName);
@@ -41,21 +46,36 @@ function render() {
         $description.text(parkData.data[0].description);
         $directionsInfo.text(parkData.data[0].directionsInfo);
         $weatherInfo.text(parkData.data[0].weatherInfo);
+         $moreInfo.text(parkData.data[0].url)
        ;
     }
 
-    /*
-    var new_array = array.map(function callback(currentValue[, index[, array]]) {
+
+/*
+//Trying to iterate over the array to display up to the limit of 40 results
+function render() {
+    //for (let i = 0; i < data; i++) 
+    {
+        $fullName.text(parkData.data[i].fullName);
+        $designation.text(parkData.data[i].designation);
+        $description.text(parkData.data[i].description);
+        $directionsInfo.text(parkData.data[i].directionsInfo);
+        $weatherInfo.text(parkData.data[i].weatherInfo);
+        $moreInfo.text(parkData.data[i].url)
+        //};
+};     
+    } else {
+        const cards = parkData.results.map(function (park) {
+                return `;
+            });
+
+            $collection.html(cards);  
+    }):
+*/
+
+/*
+// Trying to make new array
+let new_array = array.map(function callback(parkData[, index[, array]]) {
     // Return element for new_array
 }[, thisArg])
 */
-
-    /*
-const parkCards = parkData.results.map(function (parks) {
-             return `
-                <article data-url="${pokemon.url}" class="card">
-                    <h3>${parkData.data[0].fullName}</h3>
-                </article>
-            `;
- });
- */
