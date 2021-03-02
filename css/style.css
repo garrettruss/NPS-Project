@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+    background-color: lightgray;
+    font-family: 'Shippori Mincho',
+        serif;
+}
+
+.container {
+    text-align: center;
+    background-color: turquoise;
+    color: black;
+    border-radius: 30px;
+    padding: 50px;
+}
