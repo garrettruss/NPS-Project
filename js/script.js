@@ -56,7 +56,7 @@ function handleSubmit(evt) {
 function render() {
     const cards = parkData.data.map(function(park) {
            return `
-        <article data-info="${park.data}" class="card">
+            <article data-info="${park.data}" class="card">
                 <h3>${park.fullName}</h3>
             </article>
             `;
@@ -64,6 +64,27 @@ function render() {
     $collection.html(cards);
 }
 
+//V2 
+//Display park info in popup of card. 
+function handeClick() {
+    const modalCards = parkData.data.map(function(park) {
+        return `
+        <article class="modalcard">
+        $states.text(data.states);
+        $designation.text(data.designation);
+        $description.text(data.designation);
+        $directionsInfo.text(directionsInfo);
+        $weatherInfo.text(weatherInfo);
+        $moreInfo.text(moreInfo);
+        console.log(data);
+        $modal.modal();
+        </article>
+        `;
+    });
+    $modal-container.html(modalCards);
+}
+    
+/* V1
 //Display park info in popup of card. 
 function handeClick() {
     $.ajax(this.dataset)
@@ -80,12 +101,4 @@ function handeClick() {
         console.log(error);
     });
 }
-
-
-
-
-
-
-
-
-   
+*/ 
