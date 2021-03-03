@@ -15,6 +15,7 @@ let parkData;
 /*----- cached element references -----*/
 
 const $collection = $('#collection'); 
+const $modal = $('.modal');
 
 
 //V1 
@@ -32,33 +33,18 @@ let $input = $('input[type="text"]');
 /*----- event listeners -----*/
 
 $('form').on("submit", handleSubmit);
+$collection.on('click', 'article.card', handeClick);
 
 
 /*----- functions -----*/
-/*
+ 
+
 //exectues all initial actions when page loads
-function init () {
-    //Gather all park data when page loads. 
-    getData();
+
+function handeClick(evt) {
+    console.log('Clicked')
+    $modal.modal();
 }
-
-//V2
-//Display parks in a card format. Next step is to make it clickable to display further information. 
-function getData() {
-    $.ajax(NEW_URL)
-    .then(function(data) { 
-        console.log('data: ', data);
-        // assign data to global accesible var
-        parkData = data;
-        // update DOM with the data
-        render(); 
-
-    }, function(error) {
-        console.log('error: ', error);
-    });
-}
-*/ 
-
 
 //V1 
 // Take input from user to search NPS API for results, render results for user or show error. 
@@ -76,7 +62,6 @@ function handleSubmit(evt) {
      alert("Sorry about that!");
     });
 }
-
 
 
 // V1
@@ -107,6 +92,23 @@ V1 fields
     }
 */
 
+/*
+//V2
+//Display parks in a card format. Next step is to make it clickable to display further information. 
+function getData() {
+    $.ajax(NEW_URL)
+    .then(function(data) { 
+        console.log('data: ', data);
+        // assign data to global accesible var
+        parkData = data;
+        // update DOM with the data
+        render(); 
+
+    }, function(error) {
+        console.log('error: ', error);
+    });
+}
+*/ 
 
 /*
 //V2

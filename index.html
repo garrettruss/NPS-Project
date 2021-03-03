@@ -4,29 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Local CSS File--> 
     <link rel="stylesheet" href="./css/style.css">
-
-      <!-- Local JS File -->
-    <script defer src="./js/script.js"></script>
-
     <!-- Jquery CDN--> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <!-- JQ Modal--> 
+    <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
-      <!-- Stylesheet for jQuery Modal -->
+    <!-- jQuery Modal Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
-        <!-- Stylesheet for jQuery Modal -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
+   <!-- Local JS File -->
+    <script defer src="./js/script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>National Park Finder</title>
 </head>
-
 
 <body>
     <header>
@@ -50,18 +40,6 @@
                 <h2>Search results: </h2>
                 <div class="results-list">
                     <p id="fullName"></p>
-                    <p>State: </p>
-                    <p id='states'></p>
-                    <p>Designation</p>
-                    <p id="designation"></p>
-                    <p>Description: </p>
-                    <p id="description"></p>
-                    <p>Directions:</p>
-                    <p id="directionsInfo"></p>
-                    <p>Weather Conditions:</p>
-                    <p id="weatherInfo"></p>
-                    <p>More Info:</p>
-                    <p id ="moreInfo"></p>
                 </div>
             </div>
         </div>
@@ -70,6 +48,26 @@
     <footer>
         <p>Copyright &copy; All rights reserved 2021 NPS Catalog</p>
     </footer>
+
+    <div class="modal">
+        <div id="modal-container">
+            <div>
+                <h3>State:</h3>
+                <p id='states'></p>
+                <p>Designation</p>
+                <p id="designation"></p>
+                <p>Description: </p>
+                <p id="description"></p>
+                <p>Directions:</p>
+                <p id="directionsInfo"></p>
+                <p>Weather Conditions:</p>
+                <p id="weatherInfo"></p>
+                <p>More Info:</p>
+                <p id ="moreInfo"></p>
+            </div>
+            <img src="https://www.nps.gov/common/uploads/structured_data/3C861078-1DD8-B71B-0B774A242EF6A706.jpg" alt="Park-Img">
+        </div>
+    </div>
 
 </body>
 </html>
