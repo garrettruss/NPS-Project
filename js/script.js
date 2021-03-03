@@ -34,7 +34,6 @@ let $moreInfo = $('#moreInfo');
 $('form').on("submit", handleSubmit);
 $collection.on('click', 'article.card', handeClick);
 
-
 /*----- functions -----*/
 
 // Take input from user to search NPS API for results, render results for user or show error. 
@@ -65,33 +64,22 @@ function render() {
     $collection.html(cards);
 }
 
-
 //Display park info in popup of card. 
-//V1
 function handeClick() {
     $.ajax(this.dataset)
     .then(function(data) {
+        $states.text(data.states);
+        $designation.text(data.designation);
+        $description.text(data.designation);
+        $directionsInfo.text(directionsInfo);
+        $weatherInfo.text(weatherInfo);
+        $moreInfo.text(moreInfo);
         console.log(data)
         $modal.modal();
     }, function(error) {
         console.log(error);
     });
 }
-
-
-// V2
-/*
-function handeClick() {
-     const modalInfo = parkData.data.map(function(park) {  
-        return ` 
-         <article>
-         <p>${park.designation}</p>
-        </article>
-     `;
-    });
-    $modal-container.html(modalInfo);
-}
-*/ 
 
 
 
