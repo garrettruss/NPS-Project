@@ -74,7 +74,7 @@ function handeClick() {
         console.log(data)
         $modal.modal();
     }, function(error) {
-        console.log(error)
+        console.log(error);
     });
 }
 
