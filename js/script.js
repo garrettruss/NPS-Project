@@ -65,20 +65,7 @@ function render() {
     $collection.html(cards);
 }
 
-// V2
-function handeClick() {
-     const modalInfo = parkData.data.map(function(park) {  
-        return ` 
-         <article>
-         <p>${park.designation}</p>
-        </article>
-     `;
-    });
-    $modal-container.html(modalInfo);
-}
 
-
-/*
 //Display park info in popup of card. 
 //V1
 function handeClick() {
@@ -90,7 +77,21 @@ function handeClick() {
         console.log(error)
     });
 }
-*/
+
+
+// V2
+/*
+function handeClick() {
+     const modalInfo = parkData.data.map(function(park) {  
+        return ` 
+         <article>
+         <p>${park.designation}</p>
+        </article>
+     `;
+    });
+    $modal-container.html(modalInfo);
+}
+*/ 
 
 
 
