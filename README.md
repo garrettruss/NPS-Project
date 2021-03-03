@@ -8,9 +8,7 @@ CSS3
 JS
 Jquery
 NPS API https://www.nps.gov/subjects/developer/get-started.htm 
-Git
-Github
-Github Pages (for deployment)
+Git/Github/Github Pages (for deployment)
 
 ## Screenshots
 

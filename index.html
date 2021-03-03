@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Local CSS File--> 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+      <!-- Local JS File -->
+    <script defer src="/js/script.js"></script>
 
     <!-- Jquery CDN--> 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- JQ Modal--> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -20,31 +23,29 @@
         <!-- Stylesheet for jQuery Modal -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
-    <!-- Local JS File -->
-    <script defer src="./js/script.js"></script>
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
     <title>National Park Finder</title>
 </head>
 
-<body>
-    <div class="container">
-        <header>
-            <h1>Discover New Parks</h1>
-        </header>
 
-        <form>
+<body>
+    <header>
+        <h1>NPS Catalog</h1>
+    </header>
+
+     <!--form is from V1-->
+    <form>
             <input type="text" placeholder="Keyword or State Abbreviation" />
             <input type="submit" value="See Park Opportunities" />
         </form>
 
-        <main>
-            <section id ="list">
+    <main>
+        <!--"collection" is from V1-->
+        <section id='collection'>
+            
+        </section>
 
-            </section>
-        </main>
-
+        <!--"Results-List" is from V1-->
         <div class="Results-List">
                 <h2>Search results: </h2>
                 <div class="results-list">
@@ -64,6 +65,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; All rights reserved 2021 NPS Catalog</p>
+    </footer>
+
 </body>
 </html>

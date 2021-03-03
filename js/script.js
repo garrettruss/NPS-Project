@@ -1,34 +1,72 @@
+//alert('JS is Loaded');
+
 // IPO Pattern for program design - Input -> Process -> Output
 
-//State Variable
-let parkData = {};
+/*----- constants -----*/
 
-// cached element references - selected DOM elements/wrapping in money
+const API_KEY = "WeQkOhGU8MvgNRWVjqmbD8SDqYb7JSlREdUSf5uS";
+const BASE_URL = "https://developer.nps.gov/api/v1/parks?q=";
+
+// const NEW_URL = "https://developer.nps.gov/api/v1/parks?&limit=40&api_key=WeQkOhGU8MvgNRWVjqmbD8SDqYb7JSlREdUSf5uS"; 
+
+/*----- app's state (variables) -----*/
+let parkData; 
+
+/*----- cached element references -----*/
+
+const $collection = $('#collection'); 
+
+
+//V1 
+
 let $fullName = $('#fullName');
-let $states = $('#states');
-let $designation = $('#designation');
-let $description = $('#description');
-let $directionsInfo = $('#directionsInfo');
-let $weatherInfo = $('#weatherInfo');
-let $moreInfo = $('#moreInfo');
-
+//let $states = $('#states');
+//let $designation = $('#designation');
+//let $description = $('#description');
+//let $directionsInfo = $('#directionsInfo');
+//let $weatherInfo = $('#weatherInfo');
+//let $moreInfo = $('#moreInfo');
 let $input = $('input[type="text"]');
 
-const API_Key = "WeQkOhGU8MvgNRWVjqmbD8SDqYb7JSlREdUSf5uS";
-const Base_URL = "https://developer.nps.gov/api/v1/parks?q=" 
 
-// event listeners/ event handler function
+/*----- event listeners -----*/
+
 $('form').on("submit", handleSubmit);
 
 
-// functions 
+/*----- functions -----*/
+/*
+//exectues all initial actions when page loads
+function init () {
+    //Gather all park data when page loads. 
+    getData();
+}
 
+//V2
+//Display parks in a card format. Next step is to make it clickable to display further information. 
+function getData() {
+    $.ajax(NEW_URL)
+    .then(function(data) { 
+        console.log('data: ', data);
+        // assign data to global accesible var
+        parkData = data;
+        // update DOM with the data
+        render(); 
+
+    }, function(error) {
+        console.log('error: ', error);
+    });
+}
+*/ 
+
+
+//V1 
 // Take input from user to search NPS API for results, render results for user or show error. 
 function handleSubmit(evt) {
     evt.preventDefault();
     const term = $input.val();
     $input.val("");
-    $.ajax(Base_URL + term + "&limit=40&api_key=" + API_Key)
+    $.ajax(BASE_URL + term + "&limit=40&api_key=" + API_KEY)
     .then(function(data) {
     console.log('Park Data ', data);
     parkData = data;
@@ -39,10 +77,25 @@ function handleSubmit(evt) {
     });
 }
 
-//Display results. Right now the first '0' array is selected tos show the APi is linked. Ideally want to display first 40 results in a list. 
 
+
+// V1
+//Display results. Right now the first '0' array is selected tos show the API is linked. Ideally want to display first 15 or so results in a list. 
 
 function render() {
+    //new
+    const cards = parkData.data.map(function(park) {
+           return `
+        <article class="card">
+                <h3>${park.fullName}</h3>
+            </article>
+            `;
+    });
+    $collection.html(cards);
+}
+
+/*
+V1 fields 
         $fullName.text(parkData.data[0].fullName);
         $states.text(parkData.data[0].states);
         $designation.text(parkData.data[0].designation);
@@ -52,120 +105,19 @@ function render() {
          $moreInfo.text(parkData.data[0].url)
        ;
     }
-
-    /*
- const cards = parkData.results.slice(10).map(function (parks) {
-             return `
-                <article data-url="${parkData.url}" class="card">
-                    <h3>${parkData.fullName}</h3>
-                </article>
-            `;
- });
-*/ 
-
-   /*
-    const cards = parkData.results.map(function (parks) {
-             return `
-                <article data-url="${parks.url}" class="card">
-                    <h3>${parks.fullName}</h3>
-                </article>
-            `;
- });
-    
-    $collection.html(cards);
-
-    */
-/*
-let parks = render.map;
-console.log(parks);
 */
 
-//array.map(function(currentValue, index, arr), thisValue)
 
 /*
-var array = [
-    {id: 0, name: 'John', age: 20},
-    {id: 1, name: 'Jane', age: 22},
-    {id: 2, name: 'Bob', age: 24},
-    {id: 3, name: 'Ana', age: 26},
-];
-
-var newArray = myArray.map(function(profile, index, myArr) {
-    var newProfile = {
-        'id': index,
-        'name': profile.firstName,
-        'age': profile.age
-    }
-
-    return newProfile
-})
-
-newArray.forEach(function(profile, index, myArr) {
-    console.log(profile.fullName)
-});
-
-/*
-Output:
-    John
-    Jane
-    Bob
-    Ana
-*/
-
-/*
-const results = parkData.results.map(function (park) {
-    return {
-            $fullName.text(parkData.data[].fullName);
-            $states.text(parkData.data[].states);
-            $designation.text(parkData.data[].designation);
-            $description.text(parkData.data[].description);
-            $directionsInfo.text(parkData.data[].directionsInfo);
-            $weatherInfo.text(parkData.data[].weatherInfo);
-            $moreInfo.text(parkData.data[].url;
-
-            $collection.html(cards);
-        } 
-
-  */
- 
-  
-/*
-let newList = parkData.map(selParks);
-
-document.getElementsByClassName('Results-List').innerHTML = newList;
-
-function selParks (value, index, array) {
-    return 
-}
-*/
-
-/*
-//Trying to iterate over the array to display up to the limit of 40 results
-
-
+//V2
 function render() {
-
-    if (parkData) {
-        $fullName.text(parkData.data[i].fullName);
-        $designation.text(parkData.data[i].designation);
-        $description.text(parkData.data[i].description);
-        $directionsInfo.text(parkData.data[i].directionsInfo);
-        $weatherInfo.text(parkData.data[i].weatherInfo);
-        $moreInfo.text(parkData.data[i].url)
-        //};
-};     
-    } else {
-        const cards = parkData.results.map(function (park) {
-                return `;
-            });
-
-            $collection.html(cards);  
-    }):
-*/
-
-/*
-// Trying to make new array
-let new_array = array.map(function callback(parkData[, index[, array]]) {
-    // Return element for new_array
-}[, thisArg])
+    const cards = parkData.data.map(function(park) {
+        return `
+        <article class="card">
+                <h3>${park.fullName}</h3>
+            </article>
+            `;
+    });
+    $collection.html(cards);
+}
 */
