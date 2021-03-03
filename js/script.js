@@ -64,6 +64,27 @@ function render() {
     $collection.html(cards);
 }
 
+
+    
+// V1
+//Display park info in popup of card. 
+function handeClick() {
+    $.ajax(this.dataset)
+    .then(function(data) {
+        $states.text(data.states);
+        $designation.text(data.designation);
+        $description.text(data.designation);
+        $directionsInfo.text(directionsInfo);
+        $weatherInfo.text(weatherInfo);
+        $moreInfo.text(moreInfo);
+        console.log(data)
+        $modal.modal();
+    }, function(error) {
+        console.log(error);
+    });
+}
+
+/*
 //V2 
 //Display park info in popup of card. 
 function handeClick() {
@@ -83,22 +104,4 @@ function handeClick() {
     });
     $modal-container.html(modalCards);
 }
-    
-/* V1
-//Display park info in popup of card. 
-function handeClick() {
-    $.ajax(this.dataset)
-    .then(function(data) {
-        $states.text(data.states);
-        $designation.text(data.designation);
-        $description.text(data.designation);
-        $directionsInfo.text(directionsInfo);
-        $weatherInfo.text(weatherInfo);
-        $moreInfo.text(moreInfo);
-        console.log(data)
-        $modal.modal();
-    }, function(error) {
-        console.log(error);
-    });
-}
-*/ 
+*/
