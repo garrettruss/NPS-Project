@@ -17,13 +17,6 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-
-    /* 
-    V1 material
-    background-image: url(/imgs/NPS.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    */
 }
 
 main {

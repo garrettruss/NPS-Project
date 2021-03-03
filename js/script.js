@@ -18,17 +18,15 @@ const $collection = $('#collection');
 const $modal = $('.modal');
 
 
-//V1 
-
-let $fullName = $('#fullName');
-//let $states = $('#states');
-//let $designation = $('#designation');
-//let $description = $('#description');
-//let $directionsInfo = $('#directionsInfo');
-//let $weatherInfo = $('#weatherInfo');
-//let $moreInfo = $('#moreInfo');
 let $input = $('input[type="text"]');
 
+let $fullName = $('#fullName');
+let $states = $('#states');
+let $designation = $('#designation');
+let $description = $('#description');
+let $directionsInfo = $('#directionsInfo');
+let $weatherInfo = $('#weatherInfo');
+let $moreInfo = $('#moreInfo');
 
 /*----- event listeners -----*/
 
@@ -37,16 +35,6 @@ $collection.on('click', 'article.card', handeClick);
 
 
 /*----- functions -----*/
- 
-
-//exectues all initial actions when page loads
-
-function handeClick(evt) {
-    console.log('Clicked')
-    $modal.modal();
-}
-
-//V1 
 // Take input from user to search NPS API for results, render results for user or show error. 
 function handleSubmit(evt) {
     evt.preventDefault();
@@ -64,14 +52,11 @@ function handleSubmit(evt) {
 }
 
 
-// V1
-//Display results. Right now the first '0' array is selected tos show the API is linked. Ideally want to display first 15 or so results in a list. 
-
 function render() {
     //new
     const cards = parkData.data.map(function(park) {
            return `
-        <article class="card">
+        <article data-info="${park.data}" class="card">
                 <h3>${park.fullName}</h3>
             </article>
             `;
@@ -79,47 +64,28 @@ function render() {
     $collection.html(cards);
 }
 
+
+function handeClick() {
+    //console.log(this.dataset.url)
+    $.ajax(this.dataset)
+    .then(function(data) {
+        console.log(data)
+        $modal.modal();
+    }, function(error) {
+        console.log(error)
+    });
+}
+
 /*
-V1 fields 
-        $fullName.text(parkData.data[0].fullName);
-        $states.text(parkData.data[0].states);
-        $designation.text(parkData.data[0].designation);
-        $description.text(parkData.data[0].description);
-        $directionsInfo.text(parkData.data[0].directionsInfo);
-        $weatherInfo.text(parkData.data[0].weatherInfo);
-         $moreInfo.text(parkData.data[0].url)
+Modal fields 
+        $states.text(parkData.data.states);
+        $designation.text(parkData.data.designation);
+        $description.text(parkData.data.description);
+        $directionsInfo.text(parkData.data.directionsInfo);
+        $weatherInfo.text(parkData.data.weatherInfo);
+         $moreInfo.text(parkData.data.url)
        ;
     }
 */
 
-/*
-//V2
-//Display parks in a card format. Next step is to make it clickable to display further information. 
-function getData() {
-    $.ajax(NEW_URL)
-    .then(function(data) { 
-        console.log('data: ', data);
-        // assign data to global accesible var
-        parkData = data;
-        // update DOM with the data
-        render(); 
 
-    }, function(error) {
-        console.log('error: ', error);
-    });
-}
-*/ 
-
-/*
-//V2
-function render() {
-    const cards = parkData.data.map(function(park) {
-        return `
-        <article class="card">
-                <h3>${park.fullName}</h3>
-            </article>
-            `;
-    });
-    $collection.html(cards);
-}
-*/

@@ -12,8 +12,8 @@ Git/Github/Github Pages (for deployment)
 
 ## Screenshots
 
-![screenshot 1](./imgs/shot1.png)
-![screenshot 2](./imgs/shot2.png)
+![screenshot 1](##)
+![screenshot 2](##)
 
 ## Getting Started:
 [click](https://garrettruss.github.io/NPS-Project/) to see the app. 
