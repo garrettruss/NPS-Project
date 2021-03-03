@@ -12,13 +12,8 @@ Git/Github/Github Pages (for deployment)
 
 ## Screenshots
 
-![screenshot 1](##)
-![screenshot 2](##)
-
 ## Getting Started:
 [click](https://garrettruss.github.io/NPS-Project/) to see the app. 
 
 ## Future Enhancements
-Display more than one result. 
-Impliment pagination.
-Impliment modar or card desk system to display more than one result. 
+Impliment modal to displauy park infro in popup.

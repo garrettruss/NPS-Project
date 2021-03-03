@@ -7,8 +7,6 @@
 const API_KEY = "WeQkOhGU8MvgNRWVjqmbD8SDqYb7JSlREdUSf5uS";
 const BASE_URL = "https://developer.nps.gov/api/v1/parks?q=";
 
-// const NEW_URL = "https://developer.nps.gov/api/v1/parks?&limit=40&api_key=WeQkOhGU8MvgNRWVjqmbD8SDqYb7JSlREdUSf5uS"; 
-
 /*----- app's state (variables) -----*/
 let parkData; 
 
@@ -20,7 +18,10 @@ const $modal = $('.modal');
 
 let $input = $('input[type="text"]');
 
+// Displayed on card 
 let $fullName = $('#fullName');
+
+// Displayed within card once selected
 let $states = $('#states');
 let $designation = $('#designation');
 let $description = $('#description');
@@ -35,6 +36,7 @@ $collection.on('click', 'article.card', handeClick);
 
 
 /*----- functions -----*/
+
 // Take input from user to search NPS API for results, render results for user or show error. 
 function handleSubmit(evt) {
     evt.preventDefault();
@@ -51,9 +53,8 @@ function handleSubmit(evt) {
     });
 }
 
-
+//Displays results of parks in card format for users to click into and see more details.
 function render() {
-    //new
     const cards = parkData.data.map(function(park) {
            return `
         <article data-info="${park.data}" class="card">
@@ -64,9 +65,23 @@ function render() {
     $collection.html(cards);
 }
 
-
+// V2
 function handeClick() {
-    //console.log(this.dataset.url)
+     const modalInfo = parkData.data.map(function(park) {  
+        return ` 
+         <article>
+         <p>${park.designation}</p>
+        </article>
+     `;
+    });
+    $modal-container.html(modalInfo);
+}
+
+
+/*
+//Display park info in popup of card. 
+//V1
+function handeClick() {
     $.ajax(this.dataset)
     .then(function(data) {
         console.log(data)
@@ -75,17 +90,13 @@ function handeClick() {
         console.log(error)
     });
 }
-
-/*
-Modal fields 
-        $states.text(parkData.data.states);
-        $designation.text(parkData.data.designation);
-        $description.text(parkData.data.description);
-        $directionsInfo.text(parkData.data.directionsInfo);
-        $weatherInfo.text(parkData.data.weatherInfo);
-         $moreInfo.text(parkData.data.url)
-       ;
-    }
 */
 
 
+
+
+
+
+
+
+   

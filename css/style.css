@@ -29,6 +29,7 @@ header, footer {
     align-items: center;
     height: 50px;
     background-color: var(--primary--nps-color);
+    color: white; 
 }
 
 header {
@@ -66,7 +67,7 @@ header {
     box-shadow: 3px 3px 7px 12px #808080;
 } _
 
-footer {
+footer > p {
     justify-content: center;
     color: white; 
 }
@@ -87,8 +88,4 @@ footer {
     flex-direction: column;
     min-height: 200px;
     justify-content: space-evenly;
-}
-
-#modal-container > img {
-    height: 200px;
 }
