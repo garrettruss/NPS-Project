@@ -66,7 +66,7 @@ function handleSubmit(evt) {
     evt.preventDefault();
     const term = $input.val();
     $input.val("");
-    $.ajax(BASE_URL + term + "&limit=40&api_key=" + API_KEY)
+    $.ajax(BASE_URL + term + "&limit=30&api_key=" + API_KEY)
     .then(function(data) {
     console.log('Park Data ', data);
     parkData = data;
