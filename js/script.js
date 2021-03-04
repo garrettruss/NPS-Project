@@ -51,33 +51,25 @@ function render() {
     const cards = parkData.data.map(function(park) {
            return `
             <article data-info="${parkData}" class="card">
-                <br>
                 <h2 = name>${park.fullName }</h2>
-                <br>
                 <p>State: </p>
-                <br>
                 <p>${park.states}</p>
-                <br>
+                
                 <p>Designation: </p>
-                <br>
                 <p>${park.designation}</p>
-                <br>
+                
                 <p>Description: </p>
-                <br>
                 <p>${park.description}</p>
-                <br>
+                
                 <p>Directions: </p>
-                <br>
                 <p>${park.directionsInfo}</p>
-                <br>
+                
                 <p>Weather Conditions: </p>
-                <br>
                 <p>${park.weatherInfo}</p>
-                <br>
-                <p>More Info: </p>
-                <br>
+                
+                <p>More Information: </p>
                 <p><a href="${park.url}">Link to Website</a></p>
-                <br>
+                
             </article>
             `;
     });

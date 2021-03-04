@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- Jquery CDN--> 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- jQuery Modal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <!-- jQuery Modal Stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
    <!-- Local JS File -->
     <script defer src="./js/script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,23 +18,26 @@
         <header>
             <h1>National Park Service Catalog</h1>
             <h3>Explore our parks!</h3>
-            <img id="logo" src="./imgs/logo2.svg " alt="NPS Logo">
+            <img src="/imgs/National_Park_Service_Guidon.svg" alt="NPS Guidon">
+            <h3>Department of the Interior</h3>
         </header>
-       
-        <section id="selector">
-             <form>
-                <input type="text" id="userinput" placeholder="Keyword or State Abbr."/>
-                <br>
-                <input type="submit" id="submitbtn" value="See Park Opportunities" />
-            </form>
-        </section>
-
+        <div class="tophalf">
+           <div class="gif">
+                <iframe src="https://giphy.com/embed/3o6ZtopbcgwJ4KMeDS" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+           </div> 
+            <p id="brief">Some of America's greatest treasures are maintained by the National Park Service.<br /> Take a peak at what these parks have to offer below!</p>
+            <section id="selector">
+                <form>
+                    <input type="text" id="userinput" placeholder="Keyword or State Abbr."/> 
+                    <input type="submit" id="submitbtn" value="See Park Opportunities" />
+                </form>
+            </section>
+        </div>
         <main>
             <section id='collection'>
-
+                
             </section>
         </main>
-
         <footer>
             <p>Copyright &copy; All rights reserved 2021 NPS Catalog</p>
         </footer>
