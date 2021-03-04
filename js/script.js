@@ -1,4 +1,3 @@
-//alert('JS is Loaded');
 
 // IPO Pattern for program design - Input -> Process -> Output
 
@@ -9,12 +8,10 @@ const BASE_URL = "https://developer.nps.gov/api/v1/parks?q=";
 
 /*----- app's state (variables) -----*/
 let parkData; 
-// detailData;
 
 /*----- cached element references -----*/
 
 const $collection = $('#collection'); 
-// const $modal = $('.modal');
 let $input = $('input[type="text"]');
 
 // Displayed on card 
@@ -31,18 +28,10 @@ let $url = $('#url');
 /*----- event listeners -----*/
 
 $('form').on("submit", handleSubmit);
-// $collection.on('click', 'article.card', handleClick); 
-
-/*----- functions -----*/
-/*
-function handleClick() {
-        console.log(this.dataset)
-        $modal.modal();
-    }
-*/
 
 
-// Take input from user to search NPS API for results, render results for user or show error. 
+// Take input from user to search NPS API for results,
+// Need to get alert when array is empty (no matches). 
 function handleSubmit(evt) {
     evt.preventDefault();
     const term = $input.val();
@@ -52,82 +41,40 @@ function handleSubmit(evt) {
     console.log('Park Data ', data);
     parkData = data;
     render();
-
     }, function(error) {
-    console.log('error ', error);
-     alert("Sorry about that!");
+        console.log('error ', error);
+        alert("Sorry about that!");
     });
 }
 
-//Displays results of parks in card format for users to click into and see more details.
+//Displays results of parks.
 function render() {
     const cards = parkData.data.map(function(park) {
            return `
             <article data-info="${parkData}" class="card">
+                <br>
                 <h3 = name>${park.fullName}</h3>
-                br
-    
+                <br>
+                <p>State:</p>
+                <p>${park.states}</p>
+                <br>
+                <p>Designation</p>
                 <p>${park.designation}</p>
+                <br>
+                <p>Description: </p>
                 <p>${park.description}</p>
+                <br>
+                <p>Directions:</p>
                 <p>${park.directionsInfo}</p>
+                <br>
+                <p>Weather Conditions:</p>
                 <p>${park.weatherInfo}</p>
+                <br>
+                <p>More Info:</p>
                 <p>${park.url}</p>
+                <br>
             </article>
             `;
     });
     $collection.html(cards);
 }
-  
-
-
-/*
-// V1
-
-
-   $states.text(data.states);
-        $designation.text(data.designation);
-        $description.text(data.designation);
-        $directionsInfo.text(directionsInfo);
-        $weatherInfo.text(weatherInfo);
-        $moreInfo.text(moreInfo);
-
-
-//Display park info in popup of card. 
-function handeClick(evt) {
-        $modal.modal();
-    } function(error) {
-        console.log(error);
-    };
-*/ 
-
-/*
-     $.ajax(this.dataset)
-          $states.text(data.states);
-        $designation.text(data.designation);
-        $description.text(data.designation);
-        $directionsInfo.text(directionsInfo);
-        $weatherInfo.text(weatherInfo);
-        $moreInfo.text(moreInfo);
-        console.log(data)
-    .then(function(data) {
-
-//V2 
-//Display park info in popup of card. 
-function handeClick() {
-    const modalCards = parkData.data.map(function(park) {
-        return `
-        <article class="modalcard">
-        $states.text(data.states);
-        $designation.text(data.designation);
-        $description.text(data.designation);
-        $directionsInfo.text(directionsInfo);
-        $weatherInfo.text(weatherInfo);
-        $moreInfo.text(moreInfo);
-        console.log(data);
-        $modal.modal();
-        </article>
-        `;
-    });
-    $modal-container.html(modalCards);
-}
-*/
