@@ -35,14 +35,13 @@ function handleSubmit(evt) {
     evt.preventDefault();
     const term = $input.val();
     $input.val("");
-    $.ajax(BASE_URL + term + "&limit=40&api_key=" + API_KEY)
-    .then(function(data) {
+    $.ajax(BASE_URL + term + "&limit=40&api_key=" + API_KEY).then(function(data) {
     console.log('Park Data ', data);
     parkData = data;
     render();
     }, function(error) {
         console.log('error ', error);
-        alert("Sorry about that!");
+        alert("Sorry, try again")
     });
 }
 

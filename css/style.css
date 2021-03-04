@@ -25,6 +25,7 @@ body {
 
 header, footer {
     display: flex;
+    flex: auto;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -66,7 +67,6 @@ h3 {
     margin-top: .5%;
     justify-content: center;
     text-align: center;
-    padding: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
     background-color: var(--top--flag--color);
@@ -76,20 +76,19 @@ h3 {
 .gif {
     display: flex;
     justify-content: center;
+    height: 50%;
+    width: 50%;
 }
 
 #selector {
-    display: grid;
-    grid-template-rows: 2;
-    grid-template-columns: 2;
+    display: flex; 
+    flex: row;
     margin: auto;
     padding: auto;
 }
  
 #userinput {
-    display: grid;
-    grid-column: 1;
-    grid-row: 1;
+    display: flex;
     border: 5%;
     border-radius: 5%;
     color: black;
@@ -104,9 +103,7 @@ h3 {
     border: 5%;
     border-radius: 5%;
     color: black;
-    display: grid;
-    grid-column: 1;
-    grid-row:1;
+    display: flex;
     font-family: var(--primary--nps-font);
     font-size: 1.3rem;
     font-weight: 200 bold;
