@@ -70,7 +70,7 @@ h3 {
     font-size: 1.5rem;
     font-weight: bold;
     background-color: var(--top--flag--color);
-    color: white;
+    color: black;
 }
 
 .gif {
@@ -130,7 +130,7 @@ main {
     border-radius: 5%;
     background-color: var(--bottom--flag--color);
     display: flex;
-    color: white;
+    color: black;
     flex-direction: column;
     flex-grow: 1;
     font-size: 1.1rem;
