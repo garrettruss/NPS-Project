@@ -29,7 +29,6 @@ let $url = $('#url');
 
 $('form').on("submit", handleSubmit);
 
-
 // Take input from user to search NPS API for results,
 // Need to get alert when array is empty (no matches). 
 function handleSubmit(evt) {
@@ -53,25 +52,31 @@ function render() {
            return `
             <article data-info="${parkData}" class="card">
                 <br>
-                <h3 = name>${park.fullName}</h3>
+                <h2 = name>${park.fullName }</h2>
                 <br>
-                <p>State:</p>
+                <p>State: </p>
+                <br>
                 <p>${park.states}</p>
                 <br>
-                <p>Designation</p>
+                <p>Designation: </p>
+                <br>
                 <p>${park.designation}</p>
                 <br>
                 <p>Description: </p>
+                <br>
                 <p>${park.description}</p>
                 <br>
-                <p>Directions:</p>
+                <p>Directions: </p>
+                <br>
                 <p>${park.directionsInfo}</p>
                 <br>
-                <p>Weather Conditions:</p>
+                <p>Weather Conditions: </p>
+                <br>
                 <p>${park.weatherInfo}</p>
                 <br>
-                <p>More Info:</p>
-                <p>${park.url}</p>
+                <p>More Info: </p>
+                <br>
+                <p><a href="${park.url}">Link to Website</a></p>
                 <br>
             </article>
             `;
