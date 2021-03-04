@@ -33,17 +33,14 @@ header, footer {
 }
 
 header {
-    padding-left: 15px;
     background-color: var(--primary--nps-color);
     color: white; 
     box-shadow: 3px 3px 12px 1px var(--primary-shadow-color);
     font-family: var(--primary--nps-font);
+    align-items: center;
 }
 
 #collection {
-    margin-top: 30px;
-    max-width: 860px;
-    margin: 35px auto 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -51,16 +48,14 @@ header {
 
 .card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-width: 150px;
-    max-width: 350px;
-    min-height: 100px;
-    max-height: 200px;
+    justify-content: space-between;
     border-radius: 7px;
     box-shadow: 3px 3px 7px 2px var(--primary-shadow-color);
-    margin: 5px;
+    margin: 50px 50px 50px 50px;
     background-color: white;
+    flex-grow: 1;
 }
 
 .card:hover {
@@ -73,12 +68,12 @@ footer > p {
 }
 
 .modal {
-    max-width: 250px;
+    max-width: 300px;
 }
 
 #modal-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -86,5 +81,9 @@ footer > p {
     display: flex;
     flex-direction: column;
     min-height: 200px;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+#modal-container p {
+    margin: 5px 0 5px 0;
 }
