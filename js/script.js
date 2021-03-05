@@ -29,14 +29,14 @@ let $url = $('#url');
 
 $('form').on("submit", handleSubmit);
 
-// Take input from user to search NPS API for results,
-// Need to get alert when array is empty (no matches). 
+// Take input from user to search NPS API for results. If no match, alert message appears.  
 function handleSubmit(evt) {
     evt.preventDefault();
     const term = $input.val();
     $input.val("");
     $.ajax(BASE_URL + term + "&limit=40&api_key=" + API_KEY).then(function(data) {
     console.log('Park Data ', data);
+    if (data.data.length === 0)  alert("Sorry, try again!");
     parkData = data;
     render();
     }, function(error) {
@@ -45,13 +45,15 @@ function handleSubmit(evt) {
     });
 }
 
-//Displays results of parks.
+//Displays resulting information for the returned parks in individual cards, along with the following text.
 function render() {
     const cards = parkData.data.map(function(park) {
            return `
             <article data-info="${parkData}" class="card">
+            
                 <h2 = name>${park.fullName }</h2>
-                <p>State: </p>
+
+                <p>State(s):</p>
                 <p>${park.states}</p>
                 
                 <p>Designation: </p>
@@ -68,6 +70,8 @@ function render() {
                 
                 <p>More Information: </p>
                 <p><a href="${park.url}">Link to Website</a></p>
+
+                <img src="${park.images[0].url}" class="parkpic" alt="${park.fullName}">
                 
             </article>
             `;

@@ -5,8 +5,6 @@
     --bottom--flag--color: rgb(188, 189, 193);
     --arrow-brown: rgb(144, 86, 52);
     --arrowhead-green: rgb(52, 74, 36);
-    --header--red: rgb(106, 18, 17);
-    --primary-shadow-color: #808080;
     --primary--nps-font: 'Amiri', serif;
 }
 
@@ -22,11 +20,9 @@ body {
     min-height: 100%;
     flex-direction: column;
     flex-wrap: wrap;
-    
 }
 
-header,
-footer {
+header, footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +31,12 @@ footer {
     background-color: var(--arrow-brown);
     color: white;
     text-align: center;
+    padding: 1%;
+}
+
+h1 {
+    font-size: 2.0rem;
+    font-weight: 300;
 }
 
 .flag {
@@ -42,7 +44,7 @@ footer {
     justify-content: center;
     align-content: center;
     align-self: center;
-    padding: 5%;
+    padding: 2%;
     box-sizing: content-box;
     background-color: var(--arrowhead-green);
 }
@@ -63,6 +65,14 @@ footer {
     }
 }
 
+@media (min-width: 412px) {
+    .flag {
+        flex-grow: 0;
+        width: 400px;
+        height: 240px;
+    }
+}
+
 @media (min-width: 768px) {
     .flag {
         flex-grow: 0;
@@ -79,65 +89,31 @@ footer {
     }
 }
 
-
-h1 {
-    font-size: 2.0rem;
-    font-weight:300; 
-}
-
-
-
 .tophalf { 
-    align-items:center;
-    border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: center;
+    border-radius: 1%;
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: 200;
+    font-size: 1.3rem;
+    font-weight: 900;
     margin: 2%;
-    padding: 1rem;
-    background-color: var(--top--flag--color);
-    color: black;
     padding: 2rem;
-}
-
-.gif {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#selector {
-    display: flex; 
-    flex: row;
-    margin: auto;
-    padding: auto;
+    background-color: var(--bottom--flag--color);
+    color: black;
 }
  
 #userinput {
-    display: flex;
-    border: 5%;
-    border-radius: 5%;
+    background-color: aliceblue;
     color: black;
     font-family: var(--primary--nps-font);
     font-size: 1.3rem;
-    font-weight: 200;
-    margin: auto;
+    font-weight: 800;
     padding: 3%;
 }
 
 #submitbtn {
-    border: 5%;
-    border-radius: 5%;
+    background-color: aliceblue;
     color: black;
-    display: flex;
-    font-family: var(--primary--nps-font);
     font-size: 1.3rem;
-    font-weight: 200 bold;
-    margin: auto;
+    font-weight: 500;
     padding: 3%;
 }
 
@@ -150,24 +126,72 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 4%;
 }
 
 .card {
     align-items:center;
-    border-radius: 5%;
+    border-radius: 1%;
     background-color: var(--bottom--flag--color);
+    color: var(--top--flag--color);
     display: flex;
     color: black;
     flex-direction: column;
     flex-grow: 1;
-    font-size: 1.1rem;
-    font-weight: 200;
+    font-size: 1.3rem;
+    font-weight: 900;
     margin: 2%;
     padding: 1rem;
 }
 
+.parkpic {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+@media (min-width: 275px) {
+    .parkpic {
+        flex-grow: 0;
+        width: 100px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 375px) {
+    .parkpic {
+        flex-grow: 0;
+        width: 200px;
+        height: 120px;
+    }
+}
+
+@media (min-width: 412px) {
+    .parkpic {
+        flex-grow: 0;
+        width: 400px;
+        height: 240px;
+    }
+}
+
+@media (min-width: 768px) {
+    .parkpic {
+        flex-grow: 0;
+        width: 640px;
+        height: 384px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .parkpic {
+        flex-grow: 0;
+        width: 800px;
+        height: 480px;
+    }
+}
+
 .card > p {
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .card:hover {
@@ -179,10 +203,15 @@ footer {
     background-image: url("../imgs/Banff_National_Park_banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    color:black;
     display: flex;
+    padding: 3rem;
+}
+
+.footer-text {
+    background-color: rgba(103, 128, 159, .7);
+    border-radius: 5%;
     font-size: 2.0rem;
     font-family: var(--primary--nps-font);
-    font-weight: bold, 300;
-    padding: 3rem;
+    font-weight: 600;
+    color:black;
 }
