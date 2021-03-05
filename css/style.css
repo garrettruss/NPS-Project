@@ -47,6 +47,14 @@ footer {
     background-color: var(--arrowhead-green);
 }
 
+@media (min-width: 275px) {
+    .flag {
+        flex-grow: 0;
+        width: 100px;
+        height: 60px;
+    }
+}
+
 @media (min-width: 375px) {
     .flag {
         flex-grow: 0;
