@@ -5,7 +5,7 @@
     --bottom--flag--color: rgb(188, 189, 193);
     --arrow-brown: rgb(144, 86, 52);
     --arrowhead-green: rgb(52, 74, 36);
-    --header--red: rgb(106 18 17);
+    --header--red: rgb(106, 18, 17);
     --primary-shadow-color: #808080;
     --primary--nps-font: 'Amiri', serif;
 }
@@ -17,10 +17,11 @@
 
 body {
     background-color: var(--arrowhead-green);
-    flex-direction: column;
     font-family: var(--primary--nps-font);
     display: flex;
     min-height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 header, footer {
@@ -38,16 +39,11 @@ header, footer {
 h1 {
     font-size: 2.0rem;
     font-weight:300; 
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
 }
 
 h3 {
     font-size: 1.5rem;
     font-weight: 300;
-    display: flex;
 }
 
 #logo {
@@ -58,11 +54,9 @@ h3 {
 }
 
 .tophalf { 
-    align-content: center;
     border: 10%;
     border-radius: 10%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     margin-top: .5%;
     justify-content: center;
@@ -75,9 +69,8 @@ h3 {
 
 .gif {
     display: flex;
+    align-items: center;
     justify-content: center;
-    height: 50%;
-    width: 50%;
 }
 
 #selector {
@@ -123,7 +116,7 @@ main {
 }
 
 .card {
-    align-items: center;
+    align-items:center;
     border-radius: 5%;
     background-color: var(--bottom--flag--color);
     display: flex;
