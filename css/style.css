@@ -165,7 +165,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 4%;
+    margin: 2%;
 }
 
 /* Rules for area where park information is displayed on each card*/
