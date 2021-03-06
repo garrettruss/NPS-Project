@@ -13,6 +13,7 @@
     margin: 0;
 }
 
+/* Overall page content */
 body {
     background-color: var(--arrowhead-green);
     font-family: var(--primary--nps-font);
@@ -39,6 +40,25 @@ h1 {
     font-weight: 300;
 }
 
+/* Main page content */
+.main-body {
+    padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+/* Does not stick to cards but I personally like that design*/
+
+.sticky+.main-body {
+    padding-top: 102px;
+}
+
 .flag {
     display: flex;
     justify-content: center;
@@ -46,9 +66,11 @@ h1 {
     align-self: center;
     padding: 2%;
     box-sizing: content-box;
-    background-color: var(--arrowhead-green);
+    max-width: 75%;
 }
 
+
+/* Resize flag depending on screen size*/
 @media (min-width: 275px) {
     .flag {
         flex-grow: 0;
@@ -89,9 +111,10 @@ h1 {
     }
 }
 
+/* Brief paragraph & buttons layout*/
 .tophalf { 
-    display: grid;
-    grid-template-columns: 2fr;
+    display: flex;
+    flex-direction:column ;
     border-radius: 1%;
     text-align: center;
     font-size: 1.3rem;
@@ -101,31 +124,32 @@ h1 {
     background-color: var(--bottom--flag--color);
     color: black;
 }
-
-#brief {
-    grid-template-columns: 1;
-}
  
 #userinput {
-    grid-template-columns: 2fr;
     background-color: aliceblue;
     color: black;
     font-family: var(--primary--nps-font);
     font-size: 1.3rem;
     font-weight: 800;
-    padding: 3%;
+    max-width: 20rem;
+    min-width: 5rem;
+    max-height: 5rem;
+    min-height: 5rem;
 }
 
 #submitbtn {
-    grid-template-columns: 2fr;
     background-color: aliceblue;
     color: black;
     font-size: 1.3rem;
     font-weight: 500;
-    padding: 3%;
+    max-width: 20rem;
+    min-width: 5rem;
+    max-height: 5rem;
+    min-height: 5rem;
 }
 
-main {
+/* Rules for area where park information is displayed on screen*/
+.park-info {
     flex-grow: 1;
     min-height: 3vh;
 }
@@ -137,27 +161,49 @@ main {
     padding: 4%;
 }
 
+/* Rules for area where park information is displayed on each card*/
 .card {
     align-items:center;
     border-radius: 1%;
     background-color: var(--bottom--flag--color);
     color: var(--top--flag--color);
-    display: flex;
     color: black;
     flex-direction: column;
     flex-grow: 1;
     font-size: 1.3rem;
     font-weight: 900;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 2%;
-    padding: 1rem;
-}
+    padding: 2rem;
+    }
 
+.card > p {
+    display: flex;
+    max-width: 75%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+    
+#weather {
+      overflow-wrap: break-word;
+      word-break: break-all;
+      /* Adds a hyphen where the word breaks, if supported (No Blink) */
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+
+}
 .parkpic {
     display: flex;
     justify-self: center;
     align-self: center;
+    max-width: 75%;
 }
 
+/* Resize park pictures depending on screen size*/
 @media (min-width: 275px) {
     .parkpic {
         flex-grow: 0;
@@ -198,17 +244,28 @@ main {
     }
 }
 
-.card > p {
-    align-items: flex-end;
-}
-
+/* Visual feedback of what park your cursor is on.*/
 .card:hover {
     box-shadow: 3px 3px 7px 12px black;
 }
 
+#scrollToTopBtn {
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 48px;
+    width: 48px;
+}
+
+
+/* Footer style rules*/
 footer {
     align-items:center;
     background-image: url("../imgs/Banff_National_Park_banner.jpg");
+    /*Yes I know the footer image is of a Canadian National Park vs one within the American NPS.*/
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

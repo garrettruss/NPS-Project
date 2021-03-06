@@ -1,57 +1,85 @@
 
 // IPO Pattern for program design - Input -> Process -> Output
 
-/*----- constants -----*/
+$(function () {
 
-const API_KEY = "WeQkOhGU8MvgNRWVjqmbD8SDqYb7JSlREdUSf5uS";
-const BASE_URL = "https://developer.nps.gov/api/v1/parks?q=";
+    /*----- constants -----*/
 
-/*----- app's state (variables) -----*/
-let parkData; 
+    const API_KEY = "WeQkOhGU8MvgNRWVjqmbD8SDqYb7JSlREdUSf5uS";
+    const BASE_URL = "https://developer.nps.gov/api/v1/parks?q=";
 
-/*----- cached element references -----*/
+    /*----- app's state (variables) -----*/
+    let parkData; 
 
-const $collection = $('#collection'); 
-let $input = $('input[type="text"]');
+    /*----- cached element references -----*/
 
-// Displayed on card 
-let $fullName = $('#fullName');
+    const $collection = $('#collection'); 
+    let $input = $('input[type="text"]');
 
-// Displayed within card once selected
-let $states = $('#states');
-let $designation = $('#designation');
-let $description = $('#description');
-let $directionsInfo = $('#directionsInfo');
-let $weatherInfo = $('#weatherInfo');
-let $url = $('#url');
+    // Displayed on card 
+    let $fullName = $('#fullName');
 
-/*----- event listeners -----*/
+    // Displayed within card once selected
+    let $states = $('#states');
+    let $designation = $('#designation');
+    let $description = $('#description');
+    let $directionsInfo = $('#directionsInfo');
+    let $weatherInfo = $('#weatherInfo');
+    let $url = $('#url');
 
-$('form').on("submit", handleSubmit);
 
-// Take input from user to search NPS API for results. If no match, alert message appears.  
-function handleSubmit(evt) {
-    evt.preventDefault();
-    const term = $input.val();
-    $input.val("");
-    $.ajax(BASE_URL + term + "&limit=40&api_key=" + API_KEY).then(function(data) {
-    console.log('Park Data ', data);
-    if (data.data.length === 0)  alert("Sorry, try again!");
-    parkData = data;
-    render();
-    }, function(error) {
-        console.log('error ', error);
-        alert("Sorry, try again")
-    });
-}
+    /*----- event listeners -----*/
 
-//Displays resulting information for the returned parks in individual cards, along with the following text.
-function render() {
-    const cards = parkData.data.map(function(park) {
-           return `
-            <article data-info="${parkData}" class="card">
+    $('form').on("submit", handleSubmit);
+
+    /*----- functions -----*/
+
+    /*----- sticky header function -----*/
+    /*----- source: https://www.w3schools.com/howto/howto_js_sticky_header.asp  -----*/
+
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {myFunction()};
+
+    // Get the header
+    var header = document.getElementById("myHeader");
+
+    // Get the offset position of the navbar
+    var sticky = header.offsetTop;
+
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+            }
+        }
+
+    /*----- User Input -----*/
+    // Take input from user to search NPS API for results. If no match, alert message appears.  
+    function handleSubmit(evt) {
+        evt.preventDefault();
+            const term = $input.val();
+        $input.val("");
+        $.ajax(BASE_URL + term + "&limit=40&api_key=" + API_KEY).then(function(data) {
+        console.log('Park Data ', data);
+        if (data.data.length === 0)  alert("Sorry, try again!");
+            parkData = data;
+            render();
+        }, function(error) {
+            console.log('error ', error);
+            alert("Sorry, try again")
+            });
+        }
+
+    /*----- User Results -----*/
+    //Displays resulting information for the returned parks in individual cards, along with the following text.
+    function render() {
+        const cards = parkData.data.map(function(park) {
+            return `
+                <article data-info="${parkData}" class="card">
             
-                <h2 = name>${park.fullName }</h2>
+                <h2>${park.fullName }</h2>
 
                 <p>State(s):</p>
                 <p>${park.states}</p>
@@ -66,15 +94,34 @@ function render() {
                 <p>${park.directionsInfo}</p>
                 
                 <p>Weather Conditions: </p>
-                <p>${park.weatherInfo}</p>
+                <p id="weather">${park.weatherInfo}</p>
                 
                 <p>More Information: </p>
                 <p><a href="${park.url}">Link to Website</a></p>
 
+                <p>Park Fees: </p>
+                <p>${park.entranceFees[0].description}</p>
+
                 <img src="${park.images[0].url}" class="parkpic" alt="${park.fullName}">
-                
-            </article>
-            `;
-    });
-    $collection.html(cards);
-}
+                </article>
+                `;
+            });
+            $collection.html(cards);
+        }
+
+        /*----- Scroll to Top Button -----*/
+        //Source: https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/
+
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn")
+        var rootElement = document.documentElement
+        function scrollToTop() {
+        // scroll to top logic
+        rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+            })
+        }
+
+        scrollToTopBtn.addEventListener("click", scrollToTop)
+
+}); // IIFE Immediately Invoked Function Expression to protect global scope. Source - Daniel J Scott

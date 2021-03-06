@@ -12,10 +12,10 @@ a simple web app that shows NPS properties based on keyword or state abbreviatio
 
 ## Getting Started:
 [click](https://garrettruss.github.io/NPS-Project/) to see the app.
-## Page Design Desktop
-
-## Page Design Mobile
 
 ## Future Enhancements
 Impliment modal to display park info in popup window.
 Seperate out state abbreviations.
+Have the top half be two columns on large screens then go to one on smaller screens
+Get hyphens for the weather section. 
+Possibly slideshow of photos for each park.
