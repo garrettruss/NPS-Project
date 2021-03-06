@@ -1,6 +1,9 @@
 # Nationals Parks Catalog
-a simple web app that shows NPS properties based on keyword or state abbreviation.
+
+This is a simple simple web app that shows NPS properties based on keyword or state abbreviation.
+
 ## Technologies Used
+
 <ul>
 <li>HTML5</li>
 <li>CSS3</li>
@@ -10,12 +13,17 @@ a simple web app that shows NPS properties based on keyword or state abbreviatio
 <li>NPS API https://www.nps.gov/subjects/developer/get-started.htm</li>
 <li>Git/Github/Github Pages (for deployment)</li>
 
-## Getting Started:
+## Getting Started
+
 [click](https://garrettruss.github.io/NPS-Project/) to see the app.
 
 ## Future Enhancements
-Impliment modal to display park info in popup window.
-Seperate out state abbreviations.
-Have the top half be two columns on large screens then go to one on smaller screens
-Get hyphens for the weather section. 
-Possibly slideshow of photos for each park.
+
+<ul>
+<li>Impliment modal to display park info in popup window.</li>
+<li>Seperate out state abbreviations.</li>
+<li>Have the top half be two columns on large screens then go to one on smaller screens.</li>
+<li>Get hyphens.</li>
+<li>Possibly slideshow of photos for each park.</li>
+<li>Use lat and long to create pinned map on each card.</li>
+</ul>

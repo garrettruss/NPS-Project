@@ -34,35 +34,6 @@ $(function () {
 
     /*----- functions -----*/
 
-    /*----- sticky header function -----*/
-    /*----- source: https://www.w3schools.com/howto/howto_js_sticky_header.asp  -----*/
-
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {myFunction()};
-
-    // Get the header
-    var header = document.getElementById("myHeader");
-
-    // Get the offset position of the navbar
-    var sticky = header.offsetTop;
-
-    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-            }
-        }
-
-     function myFunction() {
-        if (window.pageYOffset > sticky) {
-            scrollToTopBtn.classList.add("sticky");
-        } else {
-            scrollToTopBtn.classList.remove("sticky");
-            }
-        }
-
     /*----- Scroll to Top Button -----*/
         //Source: https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/
 
@@ -78,15 +49,37 @@ $(function () {
 
         scrollToTopBtn.addEventListener("click", scrollToTop)
 
+            /*----- sticky function -----*/
+    /*----- source: https://www.w3schools.com/howto/howto_js_sticky_header.asp  -----*/
+
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {myFunction()};
+
+    // Get the header
+    var up = document.getElementById("scrollToTopBtn");
+
+    // Get the offset position of the navbar
+    var sticky = up.offsetTop;
+
+           // Made scroll to top button sticky.
+     function myFunction() {
+        if (window.pageYOffset > sticky) {
+            scrollToTopBtn.classList.add("sticky");
+        } else {
+            scrollToTopBtn.classList.remove("sticky");
+            }
+        }
+
     /*----- User Input -----*/
-    // Take input from user to search NPS API for results. If no match, alert message appears.  
+    // Take input from user to search NPS API for results.  
     function handleSubmit(evt) {
         evt.preventDefault();
             const term = $input.val();
         $input.val("");
         $.ajax(BASE_URL + term + "&limit=40&api_key=" + API_KEY).then(function(data) {
         console.log('Park Data ', data);
-        if (data.data.length === 0)  alert("Sorry, try again!");
+        //Throws alert if no results.
+        if (data.data.length === 0)  alert("Sorry, try again");
             parkData = data;
             render();
         }, function(error) {
@@ -95,8 +88,9 @@ $(function () {
             });
         }
 
+     
     /*----- User Results -----*/
-    //Displays resulting information for the returned parks in individual cards, along with the following text.
+    //Displays resulting information for the returned parks in individual cards, along with the following text and the first image. Maps to a new array. 
     function render() {
         const cards = parkData.data.map(function(park) {
             return `
@@ -134,5 +128,4 @@ $(function () {
             $collection.html(cards);
         }
 
-
-}); // IIFE Immediately Invoked Function Expression to protect global scope. Source - Daniel J Scott
+}); // IIFE Immediately Invoked Function Expression to protect global scope. Source - Daniel Scott
