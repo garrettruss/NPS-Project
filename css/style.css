@@ -36,10 +36,13 @@ header, footer {
 }
 
 h1 {
-    font-size: 2.0rem;
+    font-size: 3.rem;
     font-weight: 300;
 }
 
+h3 {
+    font-size: 2.5rem;
+}
 /* Main page content */
 .main-body {
     padding: 16px;
@@ -71,7 +74,7 @@ h1 {
 
 
 /* Resize flag depending on screen size*/
-@media (min-width: 275px) {
+@media (max-width: 275px) {
     .flag {
         flex-grow: 0;
         width: 100px;
@@ -79,7 +82,7 @@ h1 {
     }
 }
 
-@media (min-width: 375px) {
+@media (max-width: 375px) {
     .flag {
         flex-grow: 0;
         width: 200px;
@@ -175,9 +178,11 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 2%;
-    padding: 2rem;
+    margin: 1%;
+    padding: 1rem;
     }
+
+
 
 .card > p {
     display: flex;
@@ -204,7 +209,7 @@ h1 {
 }
 
 /* Resize park pictures depending on screen size*/
-@media (min-width: 275px) {
+@media (max-width: 275px) {
     .parkpic {
         flex-grow: 0;
         width: 100px;
@@ -212,7 +217,7 @@ h1 {
     }
 }
 
-@media (min-width: 375px) {
+@media (max-width: 375px) {
     .parkpic {
         flex-grow: 0;
         width: 200px;
@@ -258,6 +263,8 @@ h1 {
     font-size: 16px;
     line-height: 48px;
     width: 48px;
+    display: flex;
+    align-self:flex-end;
 }
 
 
@@ -275,7 +282,7 @@ footer {
 .footer-text {
     background-color: rgba(103, 128, 159, .7);
     border-radius: 5%;
-    font-size: 2.0rem;
+    font-size: 1.25rem;
     font-family: var(--primary--nps-font);
     font-weight: 600;
     color:black;

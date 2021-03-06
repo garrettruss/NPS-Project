@@ -81,6 +81,9 @@ $(function () {
             
                 <h2>${park.fullName }</h2>
 
+                <img src="${park.images[0].url}" class="parkpic" alt="${park.fullName}">
+                <br>
+ 
                 <p>State(s):</p>
                 <p>${park.states}</p>
                 
@@ -95,14 +98,13 @@ $(function () {
                 
                 <p>Weather Conditions: </p>
                 <p id="weather">${park.weatherInfo}</p>
+
+                <p>Park Fees: </p>
+                <p>${park.entranceFees[0].description}</p>
                 
                 <p>More Information: </p>
                 <p><a href="${park.url}">Link to Website</a></p>
 
-                <p>Park Fees: </p>
-                <p>${park.entranceFees[0].description}</p>
-
-                <img src="${park.images[0].url}" class="parkpic" alt="${park.fullName}">
                 </article>
                 `;
             });
