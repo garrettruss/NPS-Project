@@ -58,7 +58,6 @@ h3 {
     padding-top: 102px;
 }
 
-
 .flag {
     display: flex;
     justify-content: center;
@@ -68,12 +67,6 @@ h3 {
     box-sizing: content-box;
     max-width: 100%;
 }
-
-
-/* Resize flag depending on screen size*/
-
-
-
 
 /* Brief paragraph & buttons layout*/
 
@@ -159,16 +152,16 @@ h3 {
 }
     
 #break {
-      overflow-wrap: break-word;
-      word-break: break-all;
-      /* Adds a hyphen where the word breaks, if supported (No Blink) */
-      -ms-hyphens: auto;
-      -moz-hyphens: auto;
-      -webkit-hyphens: auto;
-      hyphens: auto;
-
+    overflow-wrap: break-word;
+    word-break:break-all ;
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens:auto;
 }
 
+/* Was able to get rid of all @media tags with this */
 .responsive {
     width: 100%;
     height: auto;
@@ -183,8 +176,6 @@ h3 {
     max-width: 800px;
     max-height: 480px;
 }
-
-
 
 /* Visual feedback of what park your cursor is on.*/
 .card:hover {
@@ -208,7 +199,6 @@ h3 {
     align-content: center;
     background-color:aliceblue;
 }
-
 
 /* Footer style rules*/
 footer {
