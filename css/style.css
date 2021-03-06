@@ -43,10 +43,6 @@ h1 {
 h3 {
     font-size: 2.5rem;
 }
-/* Main page content */
-.main-body {
-    padding: 16px;
-}
 
 /* The sticky class is added to the header with JS when it reaches its scroll position */
 .sticky {
@@ -62,18 +58,15 @@ h3 {
     padding-top: 102px;
 }
 
-.sticky+.main-body {
-    padding-top: 102px;
-}
 
 .flag {
     display: flex;
     justify-content: center;
     align-content: center;
     align-self: center;
-    padding: 2%;
+    padding: 1.5%;
     box-sizing: content-box;
-    max-width: 75%;
+    max-width: 100%;
 }
 
 
@@ -119,17 +112,23 @@ h3 {
 }
 
 /* Brief paragraph & buttons layout*/
+
 .tophalf { 
-    display: flex;
-    flex-direction:column ;
+    align-items:center;
     border-radius: 1%;
+    background-color: var(--bottom--flag--color);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
     font-size: 1.3rem;
     font-weight: 900;
-    margin: 2%;
+    margin: 5%;
     padding: 2rem;
-    background-color: var(--bottom--flag--color);
-    color: black;
+    max-width: 1700px;
 }
  
 #userinput {
@@ -177,25 +176,25 @@ h3 {
     color: black;
     flex-direction: column;
     flex-grow: 1;
+    max-width: 1700px;
     font-size: 1.3rem;
     font-weight: 900;
     display: flex;
     flex-wrap: wrap;
+    align-items:center;
     justify-content: center;
-    margin: 1%;
-    padding: 1rem;
+    margin: 3%;
+    padding: 2rem;
     }
-
-
 
 .card > p {
     display: flex;
-    max-width: 75%;
+    max-width: 95%;
     flex-wrap: wrap;
     justify-content: center;
 }
     
-#weather {
+#break {
       overflow-wrap: break-word;
       word-break: break-all;
       /* Adds a hyphen where the word breaks, if supported (No Blink) */
@@ -207,9 +206,10 @@ h3 {
 }
 
 .responsive {
-    max-width: 800px;
     width: 100%;
     height: auto;
+    max-width: 800px;
+    max-height: 480px;
 }
 
 .parkpic {

@@ -111,16 +111,16 @@ $(function () {
                 <p>${park.states}</p>
                 
                 <p>Designation: </p>
-                <p>${park.designation}</p>
+                <p id="break">${park.designation}</p>
                 
                 <p>Description: </p>
-                <p>${park.description}</p>
+                <p id="break">${park.description}</p>
                 
                 <p>Directions: </p>
-                <p>${park.directionsInfo}</p>
+                <p id="break">${park.directionsInfo}</p>
                 
                 <p>Weather Conditions: </p>
-                <p id="weather">${park.weatherInfo}</p>
+                <p id="break">${park.weatherInfo}</p>
 
                 <p>Park Fees: </p>
                 <p>${park.entranceFees[0].description}</p>
