@@ -71,13 +71,7 @@ h3 {
 
 
 /* Resize flag depending on screen size*/
-@media (max-width: 275px) {
-    .flag {
-        flex-grow: 0;
-        width: 100px;
-        height: 60px;
-    }
-}
+
 
 @media (max-width: 375px) {
     .flag {
@@ -276,6 +270,7 @@ h3 {
     line-height: 48px;
     width: 48px;
     display: flex;
+    flex-direction: column;
     align-self:flex-end;
 }
 
