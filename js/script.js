@@ -81,7 +81,7 @@ $(function () {
             
                 <h2>${park.fullName }</h2>
 
-                <img src="${park.images[0].url}" class="parkpic" alt="${park.fullName}">
+                <img src="${park.images[0].url}" class="responsive" alt="${park.fullName}">
                 <br>
  
                 <p>State(s):</p>

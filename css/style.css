@@ -267,6 +267,13 @@ h3 {
     align-self:flex-end;
 }
 
+.responsive {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+
 
 /* Footer style rules*/
 footer {
