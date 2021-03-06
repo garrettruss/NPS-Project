@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
 
 :root {
-    --top--flag--color: rgb(89, 109, 98);
-    --bottom--flag--color: rgb(188, 189, 193);
-    --arrow-brown: rgb(144, 86, 52);
-    --arrowhead-green: rgb(52, 74, 36);
+    --top--flag--color: rgba(89, 109, 98, .9);
+    --bottom--flag--color: rgba(188, 189, 193, .9);
+    --arrow-brown: rgba(144, 86, 52, .9);
+    --arrowhead-green: rgba(52, 74, 36, .9);
     --primary--nps-font: 'Amiri', serif;
 }
 
@@ -90,6 +90,8 @@ h1 {
 }
 
 .tophalf { 
+    display: grid;
+    grid-template-columns: 2fr;
     border-radius: 1%;
     text-align: center;
     font-size: 1.3rem;
@@ -99,8 +101,13 @@ h1 {
     background-color: var(--bottom--flag--color);
     color: black;
 }
+
+#brief {
+    grid-template-columns: 1;
+}
  
 #userinput {
+    grid-template-columns: 2fr;
     background-color: aliceblue;
     color: black;
     font-family: var(--primary--nps-font);
@@ -110,6 +117,7 @@ h1 {
 }
 
 #submitbtn {
+    grid-template-columns: 2fr;
     background-color: aliceblue;
     color: black;
     font-size: 1.3rem;
