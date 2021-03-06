@@ -62,6 +62,10 @@ h3 {
     padding-top: 102px;
 }
 
+.sticky+.main-body {
+    padding-top: 102px;
+}
+
 .flag {
     display: flex;
     justify-content: center;
@@ -201,11 +205,19 @@ h3 {
       hyphens: auto;
 
 }
+
+.responsive {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+}
+
 .parkpic {
     display: flex;
     justify-self: center;
     align-self: center;
-    max-width: 75%;
+    max-width: 800px;
+    max-height: 480px;
 }
 
 /* Resize park pictures depending on screen size*/
@@ -266,13 +278,6 @@ h3 {
     display: flex;
     align-self:flex-end;
 }
-
-.responsive {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-}
-
 
 
 /* Footer style rules*/

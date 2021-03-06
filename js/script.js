@@ -55,6 +55,29 @@ $(function () {
             }
         }
 
+     function myFunction() {
+        if (window.pageYOffset > sticky) {
+            scrollToTopBtn.classList.add("sticky");
+        } else {
+            scrollToTopBtn.classList.remove("sticky");
+            }
+        }
+
+    /*----- Scroll to Top Button -----*/
+        //Source: https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/
+
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn")
+        var rootElement = document.documentElement
+        function scrollToTop() {
+        // scroll to top logic
+        rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+            })
+        }
+
+        scrollToTopBtn.addEventListener("click", scrollToTop)
+
     /*----- User Input -----*/
     // Take input from user to search NPS API for results. If no match, alert message appears.  
     function handleSubmit(evt) {
@@ -111,19 +134,5 @@ $(function () {
             $collection.html(cards);
         }
 
-        /*----- Scroll to Top Button -----*/
-        //Source: https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/
-
-        var scrollToTopBtn = document.getElementById("scrollToTopBtn")
-        var rootElement = document.documentElement
-        function scrollToTop() {
-        // scroll to top logic
-        rootElement.scrollTo({
-            top: 0,
-            behavior: "smooth"
-            })
-        }
-
-        scrollToTopBtn.addEventListener("click", scrollToTop)
 
 }); // IIFE Immediately Invoked Function Expression to protect global scope. Source - Daniel J Scott
