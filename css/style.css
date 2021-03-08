@@ -32,30 +32,25 @@ header, footer {
     background-color: var(--arrow-brown);
     color: white;
     text-align: center;
-    padding: 1%;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
 h1 {
-    font-size: 3.rem;
+    font-size: 2.5rem;
     font-weight: 300;
 }
 
 h3 {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
 }
 
-/* The sticky class is added to the header with JS when it reaches its scroll position */
+/* The sticky class is added to the button with JS when it reaches its scroll position */
 .sticky {
     position: fixed;
     top: 0;
-    width: 100%
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-/* Does not stick to cards but I personally like that design*/
-
-.sticky+.main-body {
-    padding-top: 102px;
+    width: 50%;
+    padding-top: 2rem;
 }
 
 .flag {
@@ -153,26 +148,27 @@ h3 {
     
 #break {
     overflow-wrap: break-word;
-    word-break:break-all ;
+    word-wrap: break-word;
+    word-break:break-all;
     /* Adds a hyphen where the word breaks, if supported (No Blink) */
     -ms-hyphens: auto;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
-    hyphens:auto;
-}
-
-/* Was able to get rid of all @media tags with this */
-.responsive {
-    width: 100%;
-    height: auto;
-    max-width: 800px;
-    max-height: 480px;
+    hyphens: auto;
 }
 
 .parkpic {
     display: flex;
     justify-self: center;
     align-self: center;
+    max-width: 800px;
+    max-height: 480px;
+}
+
+/* Was able to get rid of all @media tags with this */
+.responsive {
+    width: 100%;
+    height: auto;
     max-width: 800px;
     max-height: 480px;
 }
@@ -198,6 +194,10 @@ h3 {
     justify-content: center;
     align-content: center;
     background-color:aliceblue;
+}
+
+#scrollToTopBtn:hover {
+    box-shadow: 4px 4px 4px 4px black;
 }
 
 /* Footer style rules*/

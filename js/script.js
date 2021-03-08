@@ -13,47 +13,47 @@ $(function () {
 
     /*----- cached element references -----*/
 
-    const $collection = $('#collection'); 
-    let $input = $('input[type="text"]');
+    const $collection = $("#collection"); 
+    let $input = $("input[type='text']");
 
     // Displayed on card 
-    let $fullName = $('#fullName');
+    let $fullName = $("#fullName");
 
     // Displayed within card once selected
-    let $states = $('#states');
-    let $designation = $('#designation');
-    let $description = $('#description');
-    let $directionsInfo = $('#directionsInfo');
-    let $weatherInfo = $('#weatherInfo');
-    let $url = $('#url');
-
+    let $states = $("#states");
+    let $designation = $("#designation");
+    let $description = $("#description");
+    let $directionsInfo = $("#directionsInfo");
+    let $weatherInfo = $("#weatherInfo");
+    let $url = $("#url");
 
     /*----- event listeners -----*/
 
-    $('form').on("submit", handleSubmit);
+    $("form").on("submit", handleSubmit);
 
     /*----- functions -----*/
 
     /*----- Scroll to Top Button -----*/
         //Source: https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/
 
-        var scrollToTopBtn = document.getElementById("scrollToTopBtn")
-        var rootElement = document.documentElement
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        var rootElement = document.documentElement;
+
         function scrollToTop() {
         // scroll to top logic
-        rootElement.scrollTo({
-            top: 0,
-            behavior: "smooth"
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
             })
         }
 
-        scrollToTopBtn.addEventListener("click", scrollToTop)
+        scrollToTopBtn.addEventListener("click", scrollToTop);
 
-            /*----- sticky function -----*/
+    /*----- sticky function -----*/
     /*----- source: https://www.w3schools.com/howto/howto_js_sticky_header.asp  -----*/
 
     // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {myFunction()};
+    window.onscroll = function() {mySticky()};
 
     // Get the header
     var up = document.getElementById("scrollToTopBtn");
@@ -62,7 +62,7 @@ $(function () {
     var sticky = up.offsetTop;
 
            // Made scroll to top button sticky.
-     function myFunction() {
+     function mySticky() {
         if (window.pageYOffset > sticky) {
             scrollToTopBtn.classList.add("sticky");
         } else {
@@ -77,20 +77,21 @@ $(function () {
             const term = $input.val();
         $input.val("");
         $.ajax(BASE_URL + term + "&limit=40&api_key=" + API_KEY).then(function(data) {
-        console.log('Park Data ', data);
+        console.log("Park Data ", data);
         //Throws alert if no results.
         if (data.data.length === 0)  alert("Sorry, try again");
             parkData = data;
             render();
         }, function(error) {
-            console.log('error ', error);
-            alert("Sorry, try again")
+            console.log("error ", error);
+            alert("Sorry, try again");
             });
         }
 
      
     /*----- User Results -----*/
     //Displays resulting information for the returned parks in individual cards, along with the following text and the first image. Maps to a new array. 
+    //Need to break text because URL exceeds card boundaries. 
     function render() {
         const cards = parkData.data.map(function(park) {
             return `
@@ -105,13 +106,13 @@ $(function () {
                 <p>${park.states}</p>
                 
                 <p>Designation: </p>
-                <p id="break">${park.designation}</p>
+                <p>${park.designation}</p>
                 
                 <p>Description: </p>
-                <p id="break">${park.description}</p>
+                <p>${park.description}</p>
                 
                 <p>Directions: </p>
-                <p id="break">${park.directionsInfo}</p>
+                <p>${park.directionsInfo}</p>
                 
                 <p>Weather Conditions: </p>
                 <p id="break">${park.weatherInfo}</p>

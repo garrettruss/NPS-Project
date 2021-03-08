@@ -22,8 +22,9 @@ This is a simple simple web app that shows NPS properties based on keyword or st
 <ul>
 <li>Impliment modal to display park info in popup window.</li>
 <li>Seperate out state abbreviations.</li>
-<li>Have the top half be two columns on large screens then go to one on smaller screens.</li>
-<li>Get hyphens.</li>
+<li>Get hyphens to function.</li>
 <li>Possibly slideshow of photos for each park.</li>
-<li>Use lat and long to create pinned map on each card.</li>
+<li>Use latLong field to create pinned map on each card with Google Maps API.</li>
+<li>If no image in array for a particular park, such as "Chesapeake Bay Gateways and Watertrails Network" -see WV- get a stock image or buidon</li>
+<li>If URL broken, assign backup URL to main website</li>
 </ul>
