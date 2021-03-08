@@ -36,18 +36,18 @@ $(function () {
     /*----- Scroll to Top Button -----*/
         //Source: https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/
 
-        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        var rootElement = document.documentElement;
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    var rootElement = document.documentElement;
 
-        function scrollToTop() {
-        // scroll to top logic
-            rootElement.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            })
-        }
+    function scrollToTop() {
+    // scroll to top logic
+        rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
 
-        scrollToTopBtn.addEventListener("click", scrollToTop);
+    scrollToTopBtn.addEventListener("click", scrollToTop);
 
     /*----- sticky function -----*/
     /*----- source: https://www.w3schools.com/howto/howto_js_sticky_header.asp  -----*/
@@ -62,7 +62,7 @@ $(function () {
     var sticky = up.offsetTop;
 
            // Made scroll to top button sticky.
-     function mySticky() {
+    function mySticky() {
         if (window.pageYOffset > sticky) {
             scrollToTopBtn.classList.add("sticky");
         } else {
