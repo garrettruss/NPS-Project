@@ -20,7 +20,6 @@ This is a simple simple web app that shows NPS properties based on keyword or st
 ## Future Enhancements
 
 <ul>
-<li>Impliment modal to display park info in popup window.</li>
 <li>Seperate out state abbreviations.</li>
 <li>Get hyphens to function.</li>
 <li>Possibly slideshow of photos for each park.</li>
