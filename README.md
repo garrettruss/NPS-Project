@@ -25,6 +25,6 @@ This is a simple simple web app that shows NPS properties based on keyword or st
 <li>Get hyphens to function.</li>
 <li>Possibly slideshow of photos for each park.</li>
 <li>Use latLong field to create pinned map on each card with Google Maps API.</li>
-<li>If no image in array for a particular park, such as "Chesapeake Bay Gateways and Watertrails Network" -see WV- get a stock image or buidon.</li>
+<li>If no image in array for a particular park, such as "Chesapeake Bay Gateways and Watertrails Network" -see WV- get a stock image or Guidon.</li>
 <li>If URL broken, assign backup URL to main website.</li>
 </ul>
