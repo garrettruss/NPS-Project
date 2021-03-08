@@ -1,6 +1,6 @@
 # Nationals Parks Catalog
 
-This is a simple simple web app that shows NPS properties based on keyword or state abbreviation.
+This is a  simple web app that shows NPS properties based on keyword or state abbreviation.
 
 ## Technologies Used
 
